@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GeoLocationBoxForm Component renders correctly 1`] = `
+<form
+  className="form-div"
+  data-testid="form"
+  onSubmit={[MockFunction]}
+>
+  <div
+    className="input-div"
+  >
+    <label
+      htmlFor="minlong"
+    >
+      Min Longitude
+    </label>
+    <input
+      className="input"
+      id="minlong"
+      max="180"
+      min="-180"
+      name="minlong"
+      onChange={[MockFunction]}
+      required={true}
+      step="any"
+      type="number"
+      value={10}
+    />
+  </div>
+  <div
+    className="input-div"
+  >
+    <label
+      htmlFor="minlat"
+    >
+      Min Latitude
+    </label>
+    <input
+      className="input"
+      id="minlat"
+      max="90"
+      min="-90"
+      name="minlat"
+      onChange={[MockFunction]}
+      required={true}
+      step="any"
+      type="number"
+      value={20}
+    />
+  </div>
+  <div
+    className="input-div"
+  >
+    <label
+      htmlFor="maxlong"
+    >
+      Max Longitude
+    </label>
+    <input
+      className="input"
+      id="maxlong"
+      max="180"
+      min="-180"
+      name="maxlong"
+      onChange={[MockFunction]}
+      required={true}
+      step="any"
+      type="number"
+      value={10}
+    />
+  </div>
+  <div
+    className="input-div"
+  >
+    <label
+      htmlFor="maxlat"
+    >
+      Max Latitude
+    </label>
+    <input
+      className="input"
+      id="maxlat"
+      max="90"
+      min="-90"
+      name="maxlat"
+      onChange={[MockFunction]}
+      required={true}
+      step="any"
+      type="number"
+      value={20}
+    />
+  </div>
+  <button
+    className="btn"
+    disabled={false}
+    type="submit"
+  >
+    submit
+  </button>
+</form>
+`;

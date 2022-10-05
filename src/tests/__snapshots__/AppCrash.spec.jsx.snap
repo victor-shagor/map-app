@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App crash Component renders correctly 1`] = `
+<div
+  className="app-crash"
+  data-testid="app-crash"
+>
+  <div
+    className="app-crash-content"
+  >
+    <img
+      alt="app-crash"
+      src="appcrash.svg"
+      width="350"
+    />
+    <div
+      className="app-crash-details"
+    >
+      <h2>
+        App Crashed
+      </h2>
+      <p>
+        Something went horribly wrong.
+      </p>
+      <div>
+        <p>
+          our engineers are working on this
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
