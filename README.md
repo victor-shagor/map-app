@@ -45,6 +45,7 @@ Max Latitude: 55.85902
 kindly note that an error is displayed: 
 - if the area selected is too small or does not return any geoJSON features
 - if the area selected is too large
+- if an invalid bbox is supplied
 
 ```bash
 # To run unit test
