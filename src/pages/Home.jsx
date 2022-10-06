@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import osmtogeojson from "osmtogeojson";
 import Swal from "sweetalert2";
+import center from "@turf/center";
 
 import Map from "components/Map";
 import GeoLocationBoxForm from "components/GeoLocationBoxForm";
@@ -9,6 +10,7 @@ import EmptyMapState from "components/EmptyMapState";
 
 const Home = () => {
   const [features, setFeatures] = useState([]);
+  const [centerCoordinates, setCenterCoordinates] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [inputData, setInputData] = useState({
     minlong: "",
@@ -44,9 +46,23 @@ const Home = () => {
       );
 
       const geoJsondata = osmtogeojson(osmData.data, { flatProperties: true });
-      setFeatures(geoJsondata?.features);
-      setIsLoading(false);
+      if (geoJsondata?.features.length > 0) {
+        const getCenterCordinate = center(geoJsondata);
+        setCenterCoordinates(
+          getCenterCordinate?.geometry?.coordinates?.reverse()
+        );
+        setFeatures(geoJsondata?.features);
+        setIsLoading(false);
+      } else {
+        setIsLoading(false);
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "Area too small",
+        });
+      }
     } catch (err) {
+      console.log(err);
       const errorMessage = getErrorMsg();
       setIsLoading(false);
       Swal.fire({
@@ -71,7 +87,7 @@ const Home = () => {
         isLoading={isLoading}
       />
       {features.length ? (
-        <Map features={features} />
+        <Map features={features} center={centerCoordinates} />
       ) : (
         <EmptyMapState isLoading={isLoading} />
       )}
