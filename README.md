@@ -46,5 +46,6 @@ kindly note that an error is displayed:
 ```
 
 ```bash
+To run unit test
 $ npm run test
 ```

@@ -13,8 +13,6 @@ jest.mock("react-leaflet", () => {
 
 describe("should renderMap Component", () => {
   it("should throw error if features props is empty or undefined", () => {
-    expect(() => render(<MapComponent />)).toThrow(
-      "Cannot read properties of undefined (reading '0')"
-    );
+    expect(() => render(<MapComponent />)).toThrow();
   });
 });
