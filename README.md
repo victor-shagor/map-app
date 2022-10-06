@@ -12,7 +12,7 @@ Map app
 ---
 
 ## Note
-kindly note that you need node install to be able run this app
+kindly note that you need node installed to be able run this app
 - [Node](https://nodejs.org/en/)
  
 ## Installation
